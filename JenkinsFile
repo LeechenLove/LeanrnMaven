@@ -8,7 +8,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('拉取代码打包') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/LeechenLove/ApiAutomation.git'
@@ -18,6 +18,10 @@ pipeline {
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+
+            stage('启动服务'){
+            bat "cd target && java -jar simple-maven-project-with-tests-1.0-SNAPSHOT.jar"
             }
 
             post {
