@@ -19,10 +19,12 @@ pipeline {
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
-
+        }
             stage('start jar'){
+            steps {
             bat "cd target && java -jar simple-maven-project-with-tests-1.0-SNAPSHOT.jar"
             }
+        }
 
             post {
                 // If Maven was able to run the tests, even if some of the test
@@ -31,6 +33,5 @@ pipeline {
                     archiveArtifacts 'target/*.jar'
                 }
             }
-        }
     }
 }
