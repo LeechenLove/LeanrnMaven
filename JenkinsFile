@@ -22,7 +22,7 @@ pipeline {
         }
         stage('mvn run') {
             steps{
-                bat 'cd target && java -jar simple-maven-project-with-tests-1.0-SNAPSHOT.jar'
+                bat 'cd target && java -jar LeanrnMaven-1.0-SNAPSHOT-shaded.jar'
             }
         }
     }
