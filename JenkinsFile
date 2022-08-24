@@ -19,14 +19,6 @@ pipeline {
             steps {
                 bat 'mvn -Dmaven.test.failure.ignore=true clean package'
             }
-
-            post {
-               always {
-                  success {
-                             archiveArtifacts 'target/*.jar'
-                  }
-               }
-            }
         }
         stage('mvn run') {
             steps{
