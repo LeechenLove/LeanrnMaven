@@ -29,7 +29,9 @@ pipeline {
             }
         }
         stage('mvn run') {
-            bat 'cd target && java -jar simple-maven-project-with-tests-1.0-SNAPSHOT.jar'
+            steps{
+                bat 'cd target && java -jar simple-maven-project-with-tests-1.0-SNAPSHOT.jar'
+            }
         }
     }
 }
