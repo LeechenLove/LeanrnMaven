@@ -8,7 +8,7 @@ pipeline {
     }
 
     stages {
-        stage('拉取代码打包') {
+        stage('git pull') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/LeechenLove/ApiAutomation.git'
@@ -20,7 +20,7 @@ pipeline {
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
 
-            stage('启动服务'){
+            stage('start jar'){
             bat "cd target && java -jar simple-maven-project-with-tests-1.0-SNAPSHOT.jar"
             }
 
