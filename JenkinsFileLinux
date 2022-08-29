@@ -22,7 +22,7 @@ pipeline {
         }
         stage('mvn run') {
             steps{
-                sh 'cd /var/lib/jenkins/workspace/MavenPro/target && java -jar LeanrnMaven-1.0-SNAPSHOT-shaded.jar'
+                sh 'cd /var/lib/jenkins/workspace/MavenPro/target && java -jar LeanrnMaven-1.0-SNAPSHOT.jar'
             }
         }
     }
